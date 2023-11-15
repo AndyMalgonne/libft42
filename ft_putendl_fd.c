@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amalgonn <amalgonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 16:44:56 by andi              #+#    #+#             */
-/*   Updated: 2023/11/08 18:09:13 by amalgonn         ###   ########.fr       */
+/*   Created: 2023/11/13 15:05:47 by amalgonn          #+#    #+#             */
+/*   Updated: 2023/11/13 15:17:15 by amalgonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+// #include <fcntl.h>
 
-int	ft_isdigit(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	write (fd, s, ft_strlen(s));
+	write (fd, "\n", 1);
 }
+
+// int main()
+// {
+// 	char s[] = "yolllo";
+// 	int test = open("cc.txt", O_RDWR);
+// 	ft_putendl_fd(s, 1);
+// }
